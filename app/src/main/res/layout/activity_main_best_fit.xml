@@ -11,10 +11,14 @@
 
     <Button
         android:id="@+id/bestFitButton2"
-        android:layout_width="191dp"
+        android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/inDekoButton2"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:background="#69faebd7"
         android:text="BestFit"
         android:textAllCaps="false"
@@ -22,11 +26,15 @@
 
     <Button
         android:id="@+id/inDekoButton2"
-        android:layout_width="191dp"
+        android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_marginBottom="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toStartOf="@+id/dotsLayoutBestFit"
         android:background="#69faebd7"
         android:text="InDeko"
         android:textAllCaps="false"
