@@ -3,6 +3,7 @@ package com.example.malek.tolleapp;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mDotsLayoutIndeko;
     private TextView[] mdots;
     private SliderAdapterInDeko sliderAdapterInDeko;
-
-    private Button button;
+    private Button button, moreButton;
 
     @Override
 
@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         addDotsIndicator(0);
         mSlideViewPagerInDeko.addOnPageChangeListener(viewListener);
+        moreButton = findViewById(R.id.more);
+        moreButton.setVisibility(View.INVISIBLE);
 
         button = findViewById(R.id.bestFitButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -42,15 +44,32 @@ public class MainActivity extends AppCompatActivity {
                 openMainBestFitActivity();
             }
         });
-
     }
 
+    //this method is called by the onClick event of the button and calls the method openBrowserActivity
+    public void browser(View view) {
+        openBrowserActivity();
+    }
+
+    //this method opens the activity BestFitActivity
     public void openMainBestFitActivity(){
 
         Intent intent = new Intent(this,MainBestFitActivity.class);
         startActivity(intent);
     }
 
+    //This method opens the URL of Indeko in a browser
+    public void openBrowserActivity(){
+        String url = "http://147.172.96.25/atlas/";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        if (intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+         }
+    }
+
+
+    //This method is to generate the dots in the bottom of the slider and indicates the slider's position
     public void addDotsIndicator(int position){
 
         mdots = new TextView[3];
@@ -69,6 +88,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void addMoreButton(){
+        moreButton.setVisibility(View.GONE);
+    }
+
+    public void hideMoreButton(){
+        moreButton.setVisibility(View.VISIBLE);
+    }
+
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
 
         @Override
@@ -80,6 +108,16 @@ public class MainActivity extends AppCompatActivity {
         public void onPageSelected(int i) {
 
             addDotsIndicator(i);
+
+
+
+            if (i == mdots.length-1){
+
+                moreButton.setVisibility(View.VISIBLE);
+            }else {
+                moreButton.setVisibility(View.INVISIBLE);
+            }
+
 
         }
 

@@ -59,4 +59,16 @@
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="439dp"></LinearLayout>
 
+    <Button
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="91dp"
+        android:background="#69faebd7"
+        android:text="Mehr"
+        android:onClick="browser"
+        android:textColor="@android:color/holo_green_light" />
+
 </RelativeLayout>
