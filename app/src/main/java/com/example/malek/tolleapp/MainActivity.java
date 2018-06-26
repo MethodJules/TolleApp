@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         public void onPageSelected(int i) {
 
             addDotsIndicator(i);
-            //when the user reaches the last slide the button mehr becomes visible
+            //when the user reaches the last slide the button "mehr" becomes visible
             if (i == mdots.length-1){
 
                 moreButton.setVisibility(View.VISIBLE);
