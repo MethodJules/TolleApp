@@ -13,10 +13,9 @@ public class SliderAdapterInDeko extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
 
+    //constructor of the sliderAdapterIndeko
     public SliderAdapterInDeko(Context context){
-
         this.context = context;
-
     }
 
     //Array that contains the slide images
@@ -27,7 +26,7 @@ public class SliderAdapterInDeko extends PagerAdapter {
         R.drawable.space
     };
 
-
+    //Gets the length of the slide image
     @Override
     public int getCount() {
         return slide_images.length;
@@ -51,6 +50,7 @@ public class SliderAdapterInDeko extends PagerAdapter {
 
         return  view;
     }
+
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {

@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private Button button, moreButton;
 
     @Override
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -63,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://147.172.96.25/atlas/";
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
+        //This exception prevents the app from crashing if there is no browser installed
         if (intent.resolveActivity(getPackageManager())!=null){
             startActivity(intent);
          }
     }
 
-
     //This method is to generate the dots in the bottom of the slider and indicates the slider's position
     public void addDotsIndicator(int position){
-
-        mdots = new TextView[3];
+        //mdots textview gets the length of the slider and then removes the views to avoid repetition
+        mdots = new TextView[sliderAdapterInDeko.getCount()];
         mDotsLayoutIndeko.removeAllViews();
 
         for (int i = 0; i < mdots.length; i++){
@@ -86,15 +84,6 @@ public class MainActivity extends AppCompatActivity {
         if(mdots.length > 0){
             mdots[position].setTextColor(getResources().getColor(R.color.DarkGray));
         }
-
-    }
-
-    public void addMoreButton(){
-        moreButton.setVisibility(View.GONE);
-    }
-
-    public void hideMoreButton(){
-        moreButton.setVisibility(View.VISIBLE);
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
@@ -108,17 +97,13 @@ public class MainActivity extends AppCompatActivity {
         public void onPageSelected(int i) {
 
             addDotsIndicator(i);
-
-
-
+            //when the user reaches the last slide the button mehr becomes visible
             if (i == mdots.length-1){
 
                 moreButton.setVisibility(View.VISIBLE);
             }else {
                 moreButton.setVisibility(View.INVISIBLE);
             }
-
-
         }
 
         @Override
