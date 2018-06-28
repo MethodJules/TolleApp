@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CalendarActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/backToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="135dp"
+        android:layout_marginStart="65dp"
+        android:layout_weight="1"
+        android:background="#69faebd7"
+        android:text="Zurück"
+        android:textColor="@android:color/holo_green_light" />
+
+    <LinearLayout
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_calendar"
+        android:layout_marginStart="44dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="320dp"
+            android:background="#69faebd7">
+        </CalendarView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/appointmentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/backToMain"
+        android:layout_marginEnd="65dp"
+        android:background="#69faebd7"
+        android:text="Termin "
+        android:textColor="@android:color/holo_green_light" />
+
+</RelativeLayout>

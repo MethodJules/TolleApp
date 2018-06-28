@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppointmentActivity">
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="218dp"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/placeText"
+        android:layout_width="218dp"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="247dp"
+        android:text="Date"
+        android:textSize="25dp"
+        tools:text="Ort" />
+
+    <TextView
+        android:id="@+id/placeText2"
+        android:layout_width="218dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="197dp"
+        android:text="Date"
+        android:textSize="25dp"
+        tools:text="Wählen Sie ein Ort" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="218dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="Date"
+        android:textSize="25dp"
+        tools:text="Ihre Termin ist am" />
+
+    <Button
+        android:id="@+id/backToCalendar"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="#69faebd7"
+        android:text="Zurück "
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/timePickerButton"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="173dp"
+        android:background="#69faebd7"
+        android:text="Uhr Zeit"
+        android:textColor="@android:color/holo_green_light" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="218dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="123dp"
+        android:textSize="25dp" />
+
+</RelativeLayout>

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mDotsLayoutIndeko;
     private TextView[] mdots;
     private SliderAdapterInDeko sliderAdapterInDeko;
-    private Button button, moreButton;
+    private Button button, moreButton, calendarBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         moreButton = findViewById(R.id.more);
         moreButton.setVisibility(View.INVISIBLE);
 
+        calendarBtn = findViewById(R.id.calendarButton);
+        calendarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCalendarActivity();
+            }
+        });
+
         button = findViewById(R.id.bestFitButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     //this method is called by the onClick event of the button and calls the method openBrowserActivity
     public void browser(View view) {
         openBrowserActivity();
+    }
+
+    public void openCalendarActivity(){
+        Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
     }
 
     //this method opens the activity BestFitActivity

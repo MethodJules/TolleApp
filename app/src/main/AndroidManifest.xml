@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainBestFitActivity" />
-        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".AppointmentActivity"></activity>
     </application>
 
 </manifest>

@@ -63,12 +63,23 @@
         android:id="@+id/more"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="91dp"
+        android:layout_alignBottom="@+id/slideViewPagerInDeko"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="44dp"
         android:background="#69faebd7"
-        android:text="Mehr"
         android:onClick="browser"
+        android:text="Mehr"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/slideViewPagerInDeko"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
+        android:background="#69faebd7"
+        android:text="Calendar"
         android:textColor="@android:color/holo_green_light" />
 
 </RelativeLayout>
