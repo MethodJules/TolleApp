@@ -51,10 +51,11 @@ public class AppointmentActivity extends AppCompatActivity implements TimePicker
         startActivity(intent);
     }
 
+    //The onTimeSet listener gets the hour and the minute and display them in the assigned Text view
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         TextView textView = findViewById(R.id.timeTextView);
-        textView.setText("hour: "+hourOfDay + " Minute: "+minute);
+        textView.setText(hourOfDay + " : "+minute);
     }
 
 }

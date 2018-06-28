@@ -35,13 +35,6 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.appointmentButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openAppointmentActivity();
-            }
-        });
 
         button = findViewById(R.id.backToMain);
         button.setOnClickListener(new View.OnClickListener() {

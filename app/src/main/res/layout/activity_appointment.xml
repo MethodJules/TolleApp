@@ -10,9 +10,10 @@
         android:id="@+id/timeTextView"
         android:layout_width="218dp"
         android:layout_height="49dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/timePickerButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="136dp"
+        android:layout_marginTop="-244dp"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="25dp" />
 
     <TextView
@@ -21,18 +22,18 @@
         android:layout_height="49dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="177dp"
-        android:text="Wählen Sie ein Ort"
+        android:layout_marginTop="173dp"
+        android:text="Wählen Sie ein Ort:"
         android:textSize="25dp" />
 
     <TextView
         android:id="@+id/dateText"
         android:layout_width="218dp"
         android:layout_height="49dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/textViewDate"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:text="Ihre Termin ist am"
+        android:layout_marginBottom="-97dp"
+        android:text="Ihre Termin ist am:"
         android:textSize="25dp" />
 
     <Button
@@ -41,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="56dp"
         android:background="#69faebd7"
         android:text="Zurück "
         android:textColor="@android:color/holo_green_light" />
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="202dp"
+        android:layout_marginBottom="244dp"
         android:background="#69faebd7"
         android:text="Uhr Zeit"
         android:textColor="@android:color/holo_green_light" />
@@ -64,17 +65,19 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="97dp"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="25dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/placeText2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="246dp"
         android:ems="10"
+        android:hint="Adresse"
         android:inputType="textPersonName"
-        android:text="Ort" />
+        android:textColor="@android:color/holo_green_light"
+        android:textColorLink="@android:color/holo_green_light"/>
 
 </RelativeLayout>

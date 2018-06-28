@@ -9,12 +9,11 @@
 
     <Button
         android:id="@+id/backToMain"
-        android:layout_width="wrap_content"
+        android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="135dp"
-        android:layout_marginStart="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
         android:layout_weight="1"
         android:background="#69faebd7"
         android:text="Zurück"
@@ -35,16 +34,5 @@
         </CalendarView>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/appointmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/backToMain"
-        android:layout_marginEnd="65dp"
-        android:background="#69faebd7"
-        android:text="Termin "
-        android:textColor="@android:color/holo_green_light" />
 
 </RelativeLayout>
