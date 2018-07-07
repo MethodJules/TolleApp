@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".MainBestFitActivity" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".AppointmentActivity"></activity>
+        <activity android:name=".AppointmentActivity" />
+        <activity android:name=".MainInDekoActivity"></activity>
     </application>
 
 </manifest>
