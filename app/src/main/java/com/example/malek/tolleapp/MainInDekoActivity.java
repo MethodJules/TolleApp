@@ -45,6 +45,15 @@ public class MainInDekoActivity extends AppCompatActivity {
             }
         });
 
+        //Sharing Location button
+        button = findViewById(R.id.locationButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLocationActivity();
+            }
+        });
+
     }
 
     //this method is called by the onClick event of the button and calls the method openBrowserActivity
@@ -54,6 +63,12 @@ public class MainInDekoActivity extends AppCompatActivity {
 
     public void openCalendarActivity(){
         Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
+    }
+
+    //this method opens the Location Activity
+    public void openLocationActivity(){
+        Intent intent = new Intent(this,LocationActivity.class);
         startActivity(intent);
     }
 
