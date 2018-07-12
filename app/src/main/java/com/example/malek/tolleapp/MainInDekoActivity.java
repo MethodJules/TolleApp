@@ -3,6 +3,7 @@ package com.example.malek.tolleapp;
 
 
 import android.content.Intent;
+import android.graphics.Camera;
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -54,6 +55,17 @@ public class MainInDekoActivity extends AppCompatActivity {
             }
         });
 
+
+
+        //Opening the camera activity button
+        button = findViewById(R.id.cameraButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCameraActivity();
+            }
+        });
+
     }
 
     //this method is called by the onClick event of the button and calls the method openBrowserActivity
@@ -61,20 +73,20 @@ public class MainInDekoActivity extends AppCompatActivity {
         openBrowserActivity();
     }
 
-    public void openCalendarActivity(){
+    private void openCalendarActivity(){
         Intent intent = new Intent(this, CalendarActivity.class);
         startActivity(intent);
     }
 
     //this method opens the Location Activity
-    public void openLocationActivity(){
+    private void openLocationActivity(){
         Intent intent = new Intent(this,LocationActivity.class);
         startActivity(intent);
     }
 
 
     //This method opens the URL of Indeko in a browser
-    public void openBrowserActivity(){
+    private void openBrowserActivity(){
         String url = "http://147.172.96.25/atlas/";
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
@@ -82,6 +94,12 @@ public class MainInDekoActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager())!=null){
             startActivity(intent);
         }
+    }
+
+    //This method opens the activity Camera Activity
+    private void openCameraActivity(){
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
     }
 
     //This method is to generate the dots in the bottom of the slider and indicates the slider's position
