@@ -40,14 +40,14 @@ public class CalendarActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMainActivity();
+                openMainInDekoActivity();
             }
         });
     }
 
     //this method is set to the button @zurück to go back to the home Page of InDeko
-    public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openMainInDekoActivity(){
+        Intent intent = new Intent(this, MainInDekoActivity.class);
         startActivity(intent);
     }
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="179dp"
+    tools:context=".MainInDekoActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/slideViewPagerInDeko"
+        android:layout_width="match_parent"
+        android:layout_height="469dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/dotsLayoutInDeko"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="188dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="439dp"></LinearLayout>
+
+    <Button
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignBottom="@+id/slideViewPagerInDeko"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="44dp"
+        android:background="#69faebd7"
+        android:onClick="browser"
+        android:text="Mehr"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/slideViewPagerInDeko"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
+        android:background="#69faebd7"
+        android:text="Calendar"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/locationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="89dp"
+        android:background="#69faebd7"
+        android:text="Location"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="89dp"
+        android:background="#69faebd7"
+        android:text="Kamera"
+        android:textColor="@android:color/holo_green_light" />
+
+</RelativeLayout>

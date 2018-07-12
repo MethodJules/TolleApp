@@ -36,14 +36,15 @@ public class MainBestFitActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMainActivity();
+                openMainInDekoActivity();
             }
         });
+
     }
 
-    public void openMainActivity(){
+    public void openMainInDekoActivity(){
 
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,MainInDekoActivity.class);
         startActivity(intent);
     }
 
