@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,12 +28,12 @@ import java.util.UUID;
 public class CameraActivity extends AppCompatActivity {
     private Button button;
     private ImageView imageView;
-    private TextView textView;
+    private EditText textView;
     private static final int STORAGE_PERMISSION_CODE = 2000;
     private static final int PICK_IMAGE_REQUEST = 3000;
     private Uri filePath;
     private Bitmap bitmap;
-    private static final String UPLOAD_URL = "http://192.168.44.1/upload/upload.php";
+    private static final String UPLOAD_URL = "http://192.168.137.1/upload/upload.php";
 
 
     @Override
@@ -116,7 +117,6 @@ public class CameraActivity extends AppCompatActivity {
         Cursor cursor = getContentResolver().query(uri, null, null, null, null);
         cursor.moveToFirst();
         String document_id = cursor.getString(0);
-        cursor.close();
         document_id = document_id.substring(document_id.lastIndexOf(":")+1);
         cursor.close();
         cursor = getContentResolver().query(
