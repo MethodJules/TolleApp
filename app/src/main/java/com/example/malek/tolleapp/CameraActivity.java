@@ -23,17 +23,18 @@ import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 public class CameraActivity extends AppCompatActivity {
     private Button button;
     private ImageView imageView;
-    private EditText textView;
     private static final int STORAGE_PERMISSION_CODE = 2000;
     private static final int PICK_IMAGE_REQUEST = 3000;
     private Uri filePath;
     private Bitmap bitmap;
-    private static final String UPLOAD_URL = "http://192.168.137.1/upload/upload.php";
+    private static final String UPLOAD_URL = "http://10.1.220.242/upload/upload.php";
 
 
     @Override
@@ -63,8 +64,6 @@ public class CameraActivity extends AppCompatActivity {
                 showFileChooser();
             }
         });
-
-        textView = findViewById(R.id.editTextName);
 
 
         button = findViewById(R.id.takePictureButton);
@@ -126,9 +125,15 @@ public class CameraActivity extends AppCompatActivity {
         cursor.close();
         return path;
     }
+    private String getPictureName() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String timestamp = sdf.format(new Date());
+        return "PlantPlacesImage"+ timestamp + ".jpg";
+
+    }
     //this method uploads the image to the server
     private void uploadImage(){
-        String name = textView.getText().toString().trim();
+        String name = getPictureName();
         String path = getPath(filePath);
         try {
             String uploadId = UUID.randomUUID().toString();

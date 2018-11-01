@@ -14,6 +14,7 @@ public class AppointmentActivity extends AppCompatActivity implements TimePicker
 
     private Button button;
     private TextView theDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
