@@ -9,11 +9,25 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class CalendarActivity extends AppCompatActivity {
     private static final String TAG = "CalendarActivity";
     private Button button;
     public CalendarView mCalendarView;
+    private TextView mTextViewResult;
+    private RequestQueue mQueue;
 
 
     @Override
@@ -43,6 +57,44 @@ public class CalendarActivity extends AppCompatActivity {
                 openMainInDekoActivity();
             }
         });
+
+        mTextViewResult = findViewById(R.id.resultView);
+        mQueue = Volley.newRequestQueue(this);
+        button = findViewById(R.id.button_parse);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jsonParse();
+            }
+        });
+    }
+
+    private void jsonParse(){
+        String URL = "https://api.myjson.com/bins/kp9wz";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("employees");
+                            for (int i = 0; i < jsonArray.length(); i++){
+                                JSONObject employee = jsonArray.getJSONObject(i);
+                                String firstName = employee.getString("firstname");
+                                int age = employee.getInt("age");
+                                String mail = employee.getString("mail");
+                                mTextViewResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n");
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        mQueue.add(request);
     }
 
     //this method is set to the button @zurück to go back to the home Page of InDeko
