@@ -10,11 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.io.IOException;
+
 public class AppointmentActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
     private Button button;
     private TextView theDate;
-
+    private static final String OVERVIEW_JSON = "http://147.172.96.39/indeko/indekoapi/v1/node/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,8 @@ public class AppointmentActivity extends AppCompatActivity implements TimePicker
                 openCalendarActivity();
             }
         });
+
+
 
         //the Time picker
         button = findViewById(R.id.timePickerButton);

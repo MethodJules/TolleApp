@@ -34,7 +34,7 @@ public class CameraActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 3000;
     private Uri filePath;
     private Bitmap bitmap;
-    private static final String UPLOAD_URL = "http://10.1.220.242/upload/upload.php";
+    private static final String UPLOAD_URL = "http://192.168.44.1/upload/upload.php";
 
 
     @Override
