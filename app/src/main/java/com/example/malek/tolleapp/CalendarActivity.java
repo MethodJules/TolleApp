@@ -15,6 +15,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -70,23 +71,64 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void jsonParse(){
-        String URL = "https://api.myjson.com/bins/kp9wz";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null,
-                new Response.Listener<JSONObject>() {
+        final String URL_HOME = "http://147.172.96.39/indeko/indekoapi/v1/node";
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, URL_HOME, null,
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
-                            for (int i = 0; i < jsonArray.length(); i++){
-                                JSONObject employee = jsonArray.getJSONObject(i);
-                                String firstName = employee.getString("firstname");
-                                int age = employee.getInt("age");
-                                String mail = employee.getString("mail");
-                                mTextViewResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n");
+                    public void onResponse(final JSONArray jsonArray){
+
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject events = null;
+                                try {
+                                    events = jsonArray.getJSONObject(i);
+                                    if (events.getString("type").equals("event")){
+                                        String id = events.getString("nid");
+                                       String URL = URL_HOME +"/" + id;
+
+                                       JsonObjectRequest request1 = new JsonObjectRequest(Request.Method.GET, URL, null,
+                                               new Response.Listener<JSONObject>() {
+                                                   @Override
+                                                   public void onResponse(JSONObject response) {
+                                                       try{
+                                                       JSONObject location = response.getJSONObject("field_geolocation");
+                                                       JSONArray und = location.getJSONArray("und");
+
+                                                       for (int j = 0; j < und.length(); j++){
+                                                           String latitude = und.getJSONObject(j).getString("lat");
+                                                           String longitude = und.getJSONObject(j).getString("lon");
+                                                           mTextViewResult.append("Latitude: " + latitude + "\n");
+                                                           mTextViewResult.append("Longitude: " + longitude + "\n");
+
+                                                       }
+                                                       JSONObject dateObject = response.getJSONObject("field_date");
+                                                       JSONArray insideDate = dateObject.getJSONArray("und");
+                                                       for (int k = 0; k < insideDate.length(); k++){
+                                                           String longDate = insideDate.getJSONObject(k).getString("value");
+                                                           String[] separated = longDate.split("T");
+                                                           String date = separated[0];
+                                                           String time = separated[1];
+                                                           mTextViewResult.append("Date: " + date + "\n");
+                                                           mTextViewResult.append("Time: " + time + "\n");
+                                                       }
+                                                       }catch (JSONException e){
+                                                           e.printStackTrace();
+                                                       }
+                                                   }
+                                               }, new Response.ErrorListener() {
+                                           @Override
+                                           public void onErrorResponse(VolleyError error) {
+                                               error.printStackTrace();
+                                           }
+                                       });
+                                        mQueue.add(request1);
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
                     }
                 }, new Response.ErrorListener() {
             @Override

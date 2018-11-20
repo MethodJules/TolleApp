@@ -59,7 +59,6 @@
         android:layout_marginStart="34dp"
         android:layout_marginTop="375dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="122dp"
-        android:text="TextView" />
+        android:layout_marginBottom="122dp" />
 
 </RelativeLayout>
