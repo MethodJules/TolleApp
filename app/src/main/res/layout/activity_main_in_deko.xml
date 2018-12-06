@@ -31,9 +31,12 @@
         android:id="@+id/more"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_alignBottom="@+id/slideViewPagerInDeko"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="151dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="77dp"
         android:background="#69faebd7"
         android:onClick="browser"
         android:text="Mehr"
@@ -51,6 +54,19 @@
         android:textColor="@android:color/holo_green_light" />
 
     <Button
+        android:id="@+id/pictureButtonActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/slideViewPagerInDeko"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginEnd="36dp"
+        android:background="#69faebd7"
+        android:text="Kamera"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
         android:id="@+id/locationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,11 +81,11 @@
         android:id="@+id/cameraButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginEnd="89dp"
         android:background="#69faebd7"
-        android:text="Kamera"
+        android:text="Teilen"
         android:textColor="@android:color/holo_green_light" />
 
 </RelativeLayout>

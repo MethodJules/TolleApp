@@ -54,10 +54,16 @@ public class MainInDekoActivity extends AppCompatActivity {
                 openLocationActivity();
             }
         });
-
-
-
         //Opening the camera activity button
+        button = findViewById(R.id.pictureButtonActivity);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTakePictureActivity();
+            }
+        });
+
+        //Opening the image upload activity button
         button = findViewById(R.id.cameraButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,9 +102,15 @@ public class MainInDekoActivity extends AppCompatActivity {
         }
     }
 
-    //This method opens the activity Camera Activity
+    //This method opens the activity CameraActivity
     private void openCameraActivity(){
         Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
+    }
+
+    //This method opens the activity TakePictureActivity
+    private void openTakePictureActivity(){
+        Intent intent = new Intent(this, TakePictureActivity.class);
         startActivity(intent);
     }
 

@@ -34,7 +34,7 @@ public class CameraActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 3000;
     private Uri filePath;
     private Bitmap bitmap;
-    private static final String UPLOAD_URL = "http://10.1.220.242/upload/upload.php";
+    private static final String UPLOAD_URL = "http://192.168.56.1/upload/upload.php";
 
 
     @Override
@@ -64,18 +64,7 @@ public class CameraActivity extends AppCompatActivity {
                 showFileChooser();
             }
         });
-
-
-        button = findViewById(R.id.takePictureButton);
         imageView = findViewById(R.id.cameraImageView);
-        //When clicking on the button take picture, an intent is created to open the camera
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 0);
-            }
-        });
 
     }
     //This methods asks the permission to read the storage content of the phone
